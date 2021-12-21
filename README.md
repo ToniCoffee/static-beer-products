@@ -1,2 +1,2 @@
 # html-javascript-css
-Repository for html, javascript and css projects
+Beer products website made with html, javascript and css
