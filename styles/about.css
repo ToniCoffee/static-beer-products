@@ -38,6 +38,11 @@
   padding: .5rem;
   border-radius: 7px;
   background-color: #dddddd;
+  display: flex;
+}
+
+.about-spinner {
+  width: 100%;
 }
 
 .wrapper .about-container .about-card .about-card-wrapper .about-card-img img {
