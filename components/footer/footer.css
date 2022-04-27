@@ -3,7 +3,7 @@ footer {
   position: relative;
   font-weight: bold;
   text-align: center;
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
 }
 
 .footer-social {
@@ -11,7 +11,7 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem 1rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #aaa;
 }
 
 .footer-social > * {
@@ -32,7 +32,8 @@ footer {
   display: table;
   width: 100%;
   padding: 1rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #aaa;
+  color: #777;
 }
 
 .footer-links ul {
@@ -43,6 +44,7 @@ footer {
   width: 100%;
   padding: 1rem;
   color: #195086;
+  font-size: min(.75em, 3vw);
 }
 
 .fa-twitter { color: dodgerblue; }

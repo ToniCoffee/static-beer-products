@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
   spinner.classList.toggle('display-none'); 
   sectionInfo.classList.toggle('display-none'); 
   footer.classList.toggle('display-none'); 
+  document.querySelector('.footer-copyright p span').innerHTML = new Date().getFullYear();
 }, false);
 
 async function getBeerDataAsync(numberOfResults = 1) {
@@ -41,7 +42,7 @@ function setSectionInfoImg(data) {
   const sectionInfo        = document.querySelector('.section-info');
   const sectionInfoImg     = document.createElement('img');
 
-  sectionInfoImg.classList = 'contrast-opacity';
+  // sectionInfoImg.classList = 'contrast-opacity';
   sectionInfoImg.src       = data.url;
   sectionInfoImg.alt       = 'imagen';
   appendChildAt(sectionInfoImg, sectionInfo, 0);

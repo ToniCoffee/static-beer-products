@@ -14,17 +14,17 @@
 }
 
 .carousel-wrapper h2 {
-  color: #000000;
-  background-color: #dddddd;
-  padding: 1rem;
+  color: #aaa;
+  /* background-color: #dddddd; */
+  padding: 1.5em 1em;
   text-align: center;
-  border: 1px solid black;
-  text-shadow: 2px 2px 2px #777777;
+  /* border: 1px solid black; */
+  text-shadow: 2px 2px 2px #777;
 }
 
 .section-info {
   position: relative;
-  color: #555555;
+  color: #aaa;
   height: 250px;
   font-size: 24px;
   font-variant: small-caps;
@@ -37,18 +37,20 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  filter: brightness(25%) hue-rotate(90deg);
 }
 
 .section-info p {
-  color: #000000;
+  /* color: #000000; */
   padding: 1rem;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 0px 2px white;
+  text-shadow: 2px 2px 2px #333;
   width: fit-content;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: max(3vw, 16px);
+  /* font-size: max(3vw, 16px); */
+  font-size: min(1em, 4.5vw);
 }

@@ -1,6 +1,6 @@
 {
   "name": "beerProducts",
   "version": "1.0.0",
-  "keywords": [],
-  "description": ""
+  "keywords": ["html", "css", "javascript", "beer", "products", "beer products"],
+  "description": "Beer products website"
 }
