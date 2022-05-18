@@ -1,7 +1,7 @@
 {
-  "name": "beerProducts",
+  "name": "beer-products",
   "version": "1.0.0",
-  "keywords": ["html", "css", "javascript", "beer", "products", "beer products"],
-  "description": "Beer products website",
-  "homepage": "https://tonicoffee.github.io/static-beer-products/"
+  "description": "Beer products page made using html, css, and javascript",
+  "private": true,
+  "keywords": ["html", "css", "javascript", "beer", "products", "beer products"]
 }
