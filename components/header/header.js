@@ -1,4 +1,4 @@
-function setHeaderLogo(data) {
+export function setHeaderLogo(data) {
   const headerLogoImgs    = document.querySelector('.header-logo-imgs');
 
   if(data.constructor === Array) {

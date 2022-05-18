@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded', async function(e) {
-  const response = await includeHTMLAsync();
-}, false);
+import { includeHTMLAsync } from '/scripts/utilities.js';
+
+const response = await includeHTMLAsync();

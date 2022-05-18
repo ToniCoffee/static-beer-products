@@ -1,4 +1,4 @@
-function openModal(e, modalCaptionText, modalCaptionSelectorText) {
+export function openModal(e, modalCaptionText, modalCaptionSelectorText) {
   const modal               = document.querySelector('.modal');
   const modalImg            = document.querySelector('.modal-container img');
   const modalCaption        = document.querySelector('.modal-caption');
@@ -16,7 +16,7 @@ function openModal(e, modalCaptionText, modalCaptionSelectorText) {
   modal.style.display       = 'flex';
 }
 
-function closeModal() {
+export function closeModal() {
   const modal               = document.querySelector('.modal');
   modal.style.display       = 'none';
 }

@@ -1,9 +1,11 @@
+import { delayAsync } from '/scripts/utilities.js';
+
 let switchCarousel          = true;
 let currentCarouselImgIndex = 0;
-let carouselImg             = null;
-let carouselDescription     = null;
+// let carouselImg             = null;
+// let carouselDescription     = null;
 
-function setCarouselImg(data, index) {
+export function setCarouselImg(carouselImg, data, index) {
   carouselImg.src           = data[index].image_url;
   carouselImg.id            = data[index].id;
 }
@@ -13,42 +15,44 @@ function checkCarouselIndex(data) {
   if (currentCarouselImgIndex < 0)            currentCarouselImgIndex = data.length - 1;
 }
 
-function setCarouselDescription(data, index) {
+export function setCarouselDescription(carouselDescription, data, index) {
   carouselDescription.children[0].innerHTML = data[index].name;
   const words                               = data[index].description.split(' ').splice(0, 50).join(' ');
   carouselDescription.children[1].innerHTML = words.concat(' ...');
 }
 
-function carouselLeft(beerData) {
+export function carouselLeft(carouselImg, carouselDescription, beerData) {
   switchCarousel = false;
   currentCarouselImgIndex--;
   checkCarouselIndex(beerData);
-  setCarouselImg(beerData, currentCarouselImgIndex);
+  setCarouselImg(carouselImg, beerData, currentCarouselImgIndex);
   setCarouselDescription(
+    carouselDescription,
     beerData,
     currentCarouselImgIndex
   );
   switchCarousel = true;
 }
 
-function carouselRight(beerData) {
+export function carouselRight(carouselImg, carouselDescription, beerData) {
   switchCarousel = false;
   currentCarouselImgIndex++;
   checkCarouselIndex(beerData);
-  setCarouselImg(beerData, currentCarouselImgIndex);
+  setCarouselImg(carouselImg, beerData, currentCarouselImgIndex);
   setCarouselDescription(
+    carouselDescription,
     beerData,
     currentCarouselImgIndex
   );
   switchCarousel = true;
 }
 
-async function carousel(data, initCarouselTime = 1000) {
+export async function carousel(carouselImg, carouselDescription, data, initCarouselTime = 1000) {
   while (switchCarousel) {
     await delayAsync(initCarouselTime) 
       .then(() => {
-        setCarouselImg(data, currentCarouselImgIndex);
-        setCarouselDescription(data, currentCarouselImgIndex);
+        setCarouselImg(carouselImg, data, currentCarouselImgIndex);
+        setCarouselDescription(carouselDescription, data, currentCarouselImgIndex);
         carouselImg.style.opacity             = 1;
         carouselDescription.style.opacity     = 1;
         carouselDescription.style.visibility  = 'visible';

@@ -1,29 +1,32 @@
-document.addEventListener('DOMContentLoaded', async function (e) {
-  sessionStorage.removeItem('beerData');
-  // sessionStorage.clear();
-  
-  const response        = await includeHTMLAsync();
-  const beerData        = await getBeerDataAsync(10);
-  const sectionInfoImg  = await getSectionInfoDataAsync();
+import { includeHTMLAsync, fetchByIDAsync, appendChildAt, delayAsync } from '/scripts/utilities.js';
+import { setHeaderLogo } from '/components/header/header.js';
+import { listeners } from '/scripts/common.js';
+import { carousel, setCarouselImg, setCarouselDescription } from '/components/carousel-description/carousel-description.js';
 
-  const spinner         = document.querySelector('.spinner-include');
-  const carousel        = document.querySelector('.carousel-include');
-  const sectionInfo     = document.querySelector('.section-info');
-  const footer          = document.querySelector('.footer-include');
+sessionStorage.removeItem('beerData');
+// sessionStorage.clear();
 
-  await delayAsync(1000);
-  carouselImg             = document.querySelector('.carousel img');
-  carouselDescription     = document.querySelector('.carousel-description-details');
+const response        = await includeHTMLAsync();
+const beerData        = await getBeerDataAsync(10);
+const sectionInfoImg  = await getSectionInfoDataAsync();
 
-  setSectionInfoImg(sectionInfoImg);
-  initialize(beerData);
+const spinner         = document.querySelector('.spinner-include');
+const _carousel        = document.querySelector('.carousel-include');
+const sectionInfo     = document.querySelector('.section-info');
+const footer          = document.querySelector('.footer-include');
 
-  carousel.classList.toggle('display-none');
-  spinner.classList.toggle('display-none'); 
-  sectionInfo.classList.toggle('display-none'); 
-  footer.classList.toggle('display-none'); 
-  document.querySelector('.footer-copyright p span').innerHTML = new Date().getFullYear();
-}, false);
+await delayAsync(1000);
+let carouselImg             = document.querySelector('.carousel img');
+let carouselDescription     = document.querySelector('.carousel-description-details');
+
+setSectionInfoImg(sectionInfoImg);
+initialize(carouselImg, carouselDescription, beerData);
+
+_carousel.classList.toggle('display-none');
+spinner.classList.toggle('display-none'); 
+sectionInfo.classList.toggle('display-none'); 
+footer.classList.toggle('display-none'); 
+document.querySelector('.footer-copyright p span').innerHTML = new Date().getFullYear();
 
 async function getBeerDataAsync(numberOfResults = 1) {
   const data = [];
@@ -48,10 +51,10 @@ function setSectionInfoImg(data) {
   appendChildAt(sectionInfoImg, sectionInfo, 0);
 }
 
-function initialize(beerData) {
-  listeners(beerData);
+function initialize(carouselImg, carouselDescription, beerData) {
+  listeners(carouselImg, carouselDescription, beerData);
   setHeaderLogo(beerData);
-  setCarouselImg(beerData, 0);
-  setCarouselDescription(beerData, 0);
-  carousel(beerData);
+  setCarouselImg(carouselImg, beerData, 0);
+  setCarouselDescription(carouselDescription, beerData, 0);
+  carousel(carouselImg, carouselDescription, beerData);
 }

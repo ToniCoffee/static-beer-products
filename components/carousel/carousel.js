@@ -1,8 +1,8 @@
 let switchCarousel          = true;
 let currentCarouselImgIndex = 0;
-let carouselImg             = null;
+// let carouselImg             = null;
 
-function setCarouselImg(data, index) {
+export function setCarouselImg(carouselImg, data, index) {
   carouselImg.src           = data[index].image_url;
 }
 
@@ -11,7 +11,7 @@ function checkCarouselIndex(data) {
   if (currentCarouselImgIndex < 0)            currentCarouselImgIndex = data.length - 1;
 }
 
-async function carousel(data, initCarouselTime = 1000) {
+export async function carousel(data, initCarouselTime = 1000) {
   while (switchCarousel) {
     await delay(initCarouselTime)
       .then(() => {

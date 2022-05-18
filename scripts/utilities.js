@@ -1,4 +1,4 @@
-function delayAsync(ms) {
+export function delayAsync(ms) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {resolve('executed');}, ms);
   });
@@ -13,27 +13,27 @@ function delayAsync(ms) {
   });
 } */
 
-function getStyle(element, property) {
+export function getStyle(element, property) {
   return getComputedStyle(element).getPropertyValue(property);
 }
 
-function appendChildAt(elementToAppend, parent, index = 0) {
+export function appendChildAt(elementToAppend, parent, index = 0) {
   parent.insertBefore(elementToAppend, parent.children[index]);
 }
 
-async function fetchByIDAsync(url, id = 1) {
+export async function fetchByIDAsync(url, id = 1) {
   const query     = await fetch(`${url}${id}`);
   const response  = await query.json();
   return response;
 }
 
-function setSessionStorage(key, data) {
+export function setSessionStorage(key, data) {
   sessionStorage.setItem(key, JSON.stringify(data));
 }
 
-function redirectTo(url) { window.location.href = url; }
+export function redirectTo(url) { window.location.href = url; }
 
-function includeHTMLAsync(method = 'GET', url) {
+export function includeHTMLAsync(method = 'GET', url) {
   return new Promise(function(resolve, reject) {
     // Loop through a collection of all HTML elements:
     const getAllHtmlTagsInDocument = document.getElementsByTagName('*');

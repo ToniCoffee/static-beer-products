@@ -1,9 +1,11 @@
-document.addEventListener('DOMContentLoaded', async function (e) {
-  const response  = await includeHTMLAsync();
+import { includeHTMLAsync } from '/scripts/utilities.js';
+import { setHeaderLogo } from '/components/header/header.js';
+import { listeners } from '/scripts/common.js';
 
-  const beersData = JSON.parse(sessionStorage.getItem('beersData'));
+const response  = await includeHTMLAsync();
 
-  setHeaderLogo(beersData); 
+const beersData = JSON.parse(sessionStorage.getItem('beersData'));
 
-  listeners(beersData); 
-}, false);
+setHeaderLogo(beersData); 
+
+listeners(null, null, beersData); 
