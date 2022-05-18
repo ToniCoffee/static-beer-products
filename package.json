@@ -2,6 +2,7 @@
   "name": "beer-products",
   "version": "1.0.0",
   "description": "Beer products page made using html, css, and javascript",
+  "homepage": "https://tonicoffee.github.io/static-beer-products/",
   "private": true,
   "keywords": ["html", "css", "javascript", "beer", "products", "beer products"]
 }
