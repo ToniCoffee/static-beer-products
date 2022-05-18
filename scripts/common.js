@@ -16,7 +16,7 @@ const clickActions = {
   carouselLeft:   function (e, carouselImg, carouselDescription, data) { carouselLeft(carouselImg, carouselDescription, data);  },
   carouselRight:  function (e, carouselImg, carouselDescription, data) { carouselRight(carouselImg, carouselDescription, data); },
   link: async function (e, carouselImg, carouselDescription, data) {
-    if(window.location.pathname === '/') {
+    if(window.location.pathname === '/static-beer-products/') {
       const query = await fetchByIDAsync('https://api.punkapi.com/v2/beers/', carouselImg.id);
       setSessionStorage('beerData', query[0]);
       setSessionStorage('lastUrl', '/');
