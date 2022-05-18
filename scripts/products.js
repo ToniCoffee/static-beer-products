@@ -1,6 +1,6 @@
-import { includeHTMLAsync } from '/scripts/utilities.js';
-import { setHeaderLogo } from '/components/header/header.js';
-import { listeners } from '/scripts/common.js';
+import { includeHTMLAsync } from '/./utilities.js';
+import { setHeaderLogo } from '../components/header/header.js';
+import { listeners } from '/./common.js';
 
 const response                = await includeHTMLAsync();
 

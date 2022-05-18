@@ -1,4 +1,4 @@
-import { delayAsync } from '/scripts/utilities.js';
+import { delayAsync } from '../../scripts/utilities.js';
 
 let switchCarousel          = true;
 let currentCarouselImgIndex = 0;

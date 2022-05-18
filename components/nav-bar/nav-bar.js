@@ -1,4 +1,4 @@
-import { getStyle } from '/scripts/utilities.js';
+import { getStyle } from '../../scripts/utilities.js';
 
 function navbarVisibility (navbar, value) { navbar.style.visibility = value; }
 function navbarOpacity    (navbar, value) { navbar.style.opacity    = value; }

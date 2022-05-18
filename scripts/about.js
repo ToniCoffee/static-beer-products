@@ -1,6 +1,6 @@
-import { includeHTMLAsync, fetchByIDAsync } from '/scripts/utilities.js';
-import { setHeaderLogo } from '/components/header/header.js';
-import { listeners } from '/scripts/common.js';
+import { includeHTMLAsync, fetchByIDAsync } from './utilities.js';
+import { setHeaderLogo } from '../components/header/header.js';
+import { listeners } from './common.js';
 
 const numberOfRandomUsers     = 10;
 const response                = await includeHTMLAsync();

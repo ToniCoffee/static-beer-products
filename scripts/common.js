@@ -1,8 +1,8 @@
-import { fetchByIDAsync, setSessionStorage, redirectTo } from '/scripts/utilities.js';
-import { carouselLeft, carouselRight } from '/components/carousel-description/carousel-description.js';
-import { openModal, closeModal } from '/components/modal/modal.js';
-import { navbarAnimation } from '/components/nav-bar/nav-bar.js';
-import { footerMouseHover, footerMouseOut } from '/components/footer/footer.js';
+import { fetchByIDAsync, setSessionStorage, redirectTo } from './utilities.js';
+import { carouselLeft, carouselRight } from '../components/carousel-description/carousel-description.js';
+import { openModal, closeModal } from '../components/modal/modal.js';
+import { navbarAnimation } from '../components/nav-bar/nav-bar.js';
+import { footerMouseHover, footerMouseOut } from '../components/footer/footer.js';
 
 const mouseHoverActions = {
   footerSocial: function(e) { footerMouseHover(e); }

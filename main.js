@@ -1,7 +1,7 @@
-import { includeHTMLAsync, fetchByIDAsync, appendChildAt, delayAsync } from '/scripts/utilities.js';
-import { setHeaderLogo } from '/components/header/header.js';
-import { listeners } from '/scripts/common.js';
-import { carousel, setCarouselImg, setCarouselDescription } from '/components/carousel-description/carousel-description.js';
+import { includeHTMLAsync, fetchByIDAsync, appendChildAt, delayAsync } from './scripts/utilities.js';
+import { setHeaderLogo } from './components/header/header.js';
+import { listeners } from './scripts/common.js';
+import { carousel, setCarouselImg, setCarouselDescription } from './components/carousel-description/carousel-description.js';
 
 sessionStorage.removeItem('beerData');
 // sessionStorage.clear();
