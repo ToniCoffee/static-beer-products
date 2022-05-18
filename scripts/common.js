@@ -19,7 +19,7 @@ const clickActions = {
     if(window.location.pathname === '/static-beer-products/') {
       const query = await fetchByIDAsync('https://api.punkapi.com/v2/beers/', carouselImg.id);
       setSessionStorage('beerData', query[0]);
-      setSessionStorage('lastUrl', '/static-beer-products/');
+      setSessionStorage('lastUrl', window.location.pathname);
       redirectTo(`/static-beer-products/pages/beerDetails.html?id=${carouselImg.id}`);
     } else {
       const id = e.target.previousElementSibling.id;
