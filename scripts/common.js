@@ -20,14 +20,14 @@ const clickActions = {
       const query = await fetchByIDAsync('https://api.punkapi.com/v2/beers/', carouselImg.id);
       setSessionStorage('beerData', query[0]);
       setSessionStorage('lastUrl', '/');
-      redirectTo(`/pages/beerDetails.html?id=${carouselImg.id}`);
+      redirectTo(`/static-beer-products/pages/beerDetails.html?id=${carouselImg.id}`);
     } else {
       const id = e.target.previousElementSibling.id;
       const query = await fetchByIDAsync('https://api.punkapi.com/v2/beers/', id);
       setSessionStorage('beerData', query[0]);
       setSessionStorage('lastUrl', window.location.pathname);
       closeModal();
-      redirectTo(`/pages/beerDetails.html?id=${id}`);
+      redirectTo(`/static-beer-products/pages/beerDetails.html?id=${id}`);
     }
   },
   products:   function (e, carouselImg, carouselDescription, data) { setSessionStorage('beersData', data);  },
